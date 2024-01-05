@@ -2,9 +2,9 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className=" intro  overflow-auto">
+      <div className=" intro">
         <div>
-          <h1 className="text-orange-300 font-semibold mb-3">Intro</h1>
+          <h1 className="text-orange-300 font-semibold mb-3">Intro🌱</h1>
         </div>
         <div>
           <h1 className="lg:text-3xl text-2xl ">Hi👋, Im Balaji Viswanadh</h1>

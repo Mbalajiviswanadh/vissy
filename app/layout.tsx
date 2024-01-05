@@ -18,11 +18,13 @@ export default function RootLayout({
   return (
     <html data-theme="fantasy" lang="en">
       <body className={inter.className}>
-        <div className="lg:mx-80 ">
+        <div className="lg:mx-80 min-h-screen flex flex-col">
           <div className=" pt-20">
             <NavBar />
           </div>
-          <div className="lg:px-[5%] px-[12%] pt-[5%]">{children}</div>
+          <div className=" lg:px-[5%] px-[12%] pt-[5%] flex-grow overflow-y-auto">
+            {children}
+          </div>
         </div>
       </body>
     </html>

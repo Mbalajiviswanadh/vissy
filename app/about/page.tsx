@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 const AboutPage = () => {
   return (
-    <div>
+    <div className=" text-justify ">
       <div>
-        <h1 className="text-orange-300 font-semibold">About Me</h1>
+        <h1 className="text-orange-300 font-semibold">About Me 🧑🏻‍🏫</h1>
       </div>
       <div className="lg:text-[18px] text-[12px]">
         <h2 className="my-4">
@@ -25,11 +27,21 @@ const AboutPage = () => {
         </h2>
 
         <h2>
-          <span className="text-green-400 text-xl">❛❛</span>Sometimes, I might
-          take a bit longer because Im committed to making things super
-          professional and perfect. I believe its worth the extra time to
-          deliver good results!
-          <span className="text-green-400 text-xl">❜❜</span>
+          <span className="text-green-400 lg:text-2xl text-[15px]">❛❛</span>
+          Sometimes, I might take a bit longer because Im committed to making
+          things super professional and perfect🦋. I believe its worth the extra
+          time to deliver good results!
+          <span className="text-green-400 lg:text-2xl text-[15px]">❜❜</span>
+        </h2>
+
+        <h2 className="my-2">
+          As I progress in my career, Im eager to connect with fellow
+          enthusiasts🤝 in the Tech field or other fields. Lets share ideas and
+          explore opportunities together. Feel free to{" "}
+          <Link className="text-orange-300 underline" href={"/alllinks"}>
+            reach me out
+          </Link>
+          , look forward to connecting with you!☮️
         </h2>
       </div>
     </div>
