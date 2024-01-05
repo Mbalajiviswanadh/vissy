@@ -16,13 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-theme="winter" lang="en">
+    <html data-theme="fantasy" lang="en">
       <body className={inter.className}>
         <div className="lg:mx-80 ">
-          <div className=" py-20">
+          <div className=" pt-20">
             <NavBar />
           </div>
-          <div className="flex justify-center">{children}</div>
+          <div className="lg:px-[5%] px-[12%] pt-[5%]">{children}</div>
         </div>
       </body>
     </html>
