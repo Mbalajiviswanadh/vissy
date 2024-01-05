@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBar/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html data-theme="winter" lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col gap-[50px] mx-[20%]  ">
-          <div className="mt-20">
+        <div className="lg:mx-80 ">
+          <div className=" py-20">
             <NavBar />
           </div>
-          <div className="justify-center flex ">{children}</div>
+          <div className="flex justify-center">{children}</div>
         </div>
       </body>
     </html>

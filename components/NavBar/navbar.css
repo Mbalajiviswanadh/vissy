@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  .theme-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .webtext-logo {
+    font-size: small;
+  }
+}
