@@ -15,13 +15,15 @@ export default function Home() {
           </p>
           <div className="pt-4 lg:pt-8">
             <h2>
-              You can connect with me{" "}
+              You can connect with me through{" "}
               <span>
                 <Link className="text-orange-300 underline" href={"/alllinks"}>
                   here
                 </Link>
                 .
               </span>
+              {"  "}
+              ˗ˏˋ ♡ ˎˊ˗
             </h2>
           </div>
         </div>
