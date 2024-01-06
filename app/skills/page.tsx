@@ -1,13 +1,37 @@
 import Image from "next/image";
+import nobgcat from "./nobgcat.gif";
+
+//imageskill
+// import f from "./flutter.png";
+// import js from "./javascript.png";
+// import mdb from "./mongodb.png";
+// import njs from "./nextjs.png";
+// import node from "./nodejs.png";
+// import rjs from "./reactjs.png";
+// import tcss from "./tailwindcss.png";
+// import ts from "./ts.png";
+
 const SkillsPage = () => {
-  // const logos = [
-  //   { name: "React.js", image:'' },
-  //   { name: "JavaScript", image: "" },
-  //   { name: "MongoDB", image: "" },
-  //   { name: "Tailwind CSS", image: "" },
-  //   { name: "Node.js", image: "path-to-nodejs-logo.png" },
-  //   { name: "Next.js", image: "path-to-nextjs-logo.png" },
-  // ];
+  //  list of skills
+  const myskills = [
+    { skills: "HTML" },
+    { skills: "CSS" },
+    { skills: "Java" },
+    { skills: "Python" },
+  ];
+  const advskills = [
+    { advskill: "JavaScript" },
+    { advskill: "TypeScript" },
+    { advskill: "React Js" },
+    { advskill: "Next Js" },
+    { advskill: "Redux" },
+    { advskill: "Tailwind CSS" },
+    { advskill: "BootStrap" },
+    { advskill: "ExpressJs" },
+    { advskill: "Node Js" },
+    { advskill: "MongoDB" },
+    { advskill: "Flutter" },
+  ];
   return (
     <div className=" text-justify ">
       <div className="text-orange-300 font-semibold">
@@ -51,18 +75,49 @@ const SkillsPage = () => {
           <span className="text-green-400 lg:text-2xl text-[15px]">❜❜</span>
         </h2>
       </div>
-      <div>
-        {/* {logos.map((logo, index) => (
-          <div
-            key={index}
-            className="bg-white p-4 rounded-lg shadow-md flex items-center justify-center">
-            <Image
-              src={logo.image}
-              alt={logo.name}
-              className="h-12 w-12 lg:h-16 lg:w-16 xl:h-20 xl:w-20 object-contain"
-            />
+
+      {/* Skils here */}
+      <div className="flex flex-col lg:flex-row  ">
+        <div>
+          <h1 className="mt-10 mb-3 lg:text-[18px] text-[12px] font-medium  text-amber-500">
+            <span className="border-b-2 border-green-300">Languages</span>
+          </h1>
+
+          <div className="flex mb-5 lg:text-[18px] text-[10px] flex-wrap flex-row lg:justify-start justify-center">
+            {myskills.map((d, idx) => {
+              return (
+                <>
+                  <h2
+                    key={idx}
+                    className="bg-green-300 px-4 py-2  mr-2 mt-2 text-zinc-800 font-medium rounded ">
+                    {d.skills}
+                  </h2>
+                </>
+              );
+            })}
           </div>
-        ))} */}
+          <h1 className="mt-10 mb-3 lg:text-[18px] text-[12px] font-medium  text-amber-500">
+            <span className="border-b-2 border-green-300">
+              Libraries & Frameworks
+            </span>
+          </h1>
+          <div className="flex lg:text-[18px] lg:w-[50%] text-[10px] lg:justify-start justify-center flex-wrap flex-row">
+            {advskills.map((d, idx) => {
+              return (
+                <>
+                  <h2
+                    key={idx}
+                    className="bg-green-300 px-4 py-2  mr-2 mt-2 text-zinc-800 font-medium rounded ">
+                    {d.advskill}
+                  </h2>
+                </>
+              );
+            })}
+          </div>
+        </div>
+        <div className="lg:pt-20 lg:w-[40%] ">
+          <Image src={nobgcat} alt="studygif" />
+        </div>
       </div>
     </div>
   );

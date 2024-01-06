@@ -22,7 +22,7 @@ export default function RootLayout({
           <div className=" pt-20">
             <NavBar />
           </div>
-          <div className=" lg:px-[5%] px-[12%] pt-[5%] flex-grow overflow-y-auto">
+          <div className=" mb-[5%] lg:px-[5%] px-[12%] pt-[5%] flex-grow overflow-y-auto">
             {children}
           </div>
         </div>

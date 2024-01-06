@@ -78,7 +78,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <div className="drawer-side ">
+      <div className="drawer-side overflow-hidden">
         <label
           htmlFor="my-drawer-3"
           aria-label="close sidebar"
@@ -102,7 +102,7 @@ const NavBar = () => {
             <Image
               src={cat}
               alt="Image description"
-              className="pt-60"
+              className="lg:pt-60 pt-52"
               width={200}
               height={100}
             />
