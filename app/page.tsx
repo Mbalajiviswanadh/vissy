@@ -6,9 +6,12 @@ export default function Home() {
     <>
       <div className="flex flex-col lg:flex-row items-center lg:justify-between p-8 lg:p-16">
         <div className="intro lg:mr-8">
-          <h1 className="text-orange-300 font-semibold mb-3 lg:text-2xl">
+          <h1 className="text-orange-300 font-semibold  lg:text-2xl">
             Intro🌱
           </h1>
+          <h3 className="text-zinc-300  mb-3 lg:text-[13px] text-[9px]">
+            @vissy
+          </h3>
           <h1 className="lg:text-3xl text-2xl ">Hi👋, Im Balaji Viswanadh</h1>
           <p className="lg:text-lg pt-2 text-sm text-zinc-500">
             - Passionate Designer and Developer.🪴
