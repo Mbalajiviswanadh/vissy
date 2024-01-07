@@ -32,6 +32,7 @@ const SkillsPage = () => {
     { advskill: "Node Js" },
     { advskill: "MongoDB" },
     { advskill: "Flutter" },
+    { advskill: "Figma" },
   ];
   // list of skill images
   const skillimgs = [
@@ -126,7 +127,7 @@ const SkillsPage = () => {
 
       {/* images of skills */}
 
-      <div className="flex  my-12 gap-4 justify-center flex-wrap">
+      <div className="flex  my-12 lg:gap-10 gap-4 justify-center flex-wrap">
         {skillimgs.map((simg, i) => (
           <div className=" pt-3" key={i}>
             <Image
