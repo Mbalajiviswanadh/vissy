@@ -9,16 +9,19 @@ export default function Home() {
           <h1 className="text-orange-300 font-semibold  lg:text-2xl">
             Intro🌱
           </h1>
-          <h3 className="text-zinc-300  mb-3 lg:text-[13px] text-[9px]">
+          <h3 className="text-zinc-400  mb-3 lg:text-[13px] text-[9px]">
             @vissy
           </h3>
           <h1 className="lg:text-3xl text-2xl ">Hi👋, Im Balaji Viswanadh</h1>
-          <p className="lg:text-lg pt-2 text-sm text-zinc-500">
+          <p className="lg:text-lg text-[12px] pt-2  text-zinc-500">
             - Passionate Designer and Developer.🪴
           </p>
-          <div className="pt-4 lg:pt-8">
+          <p className="lg:text-lg text-[12px]  text-zinc-500">
+            - Good Listener.(^▽^)👍
+          </p>
+          <div className="pt-4 text-sm lg:pt-8">
             <h2>
-              You can connect with me through{" "}
+              Feel free to connect with me through{" "}
               <span>
                 <Link className="text-orange-300 underline" href={"/alllinks"}>
                   here

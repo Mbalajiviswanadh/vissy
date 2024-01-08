@@ -1,42 +1,49 @@
-import { FaChevronCircleDown } from "react-icons/fa";
-
-import { FaInstagram } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
-import { SiBento } from "react-icons/si";
-import { FaPinterest } from "react-icons/fa";
-import { FaSpotify } from "react-icons/fa";
+import Image from "next/image";
+import bento from "./bento.png";
+import github from "./gihtub.png";
+import gmail from "./gmail.png";
+import linkedin from "./linkedin.png";
+import insta from "./insta.png";
+import pin from "./pin.png";
+import spotify from "./spotify.png";
 import Link from "next/link";
+import mewo from "./mewo.gif";
 
 const AllLinks = () => {
   const links = [
     {
-      icon: <SiGmail size={40} />,
+      icon: gmail,
+      bio: "Gmail",
       link: "mailto:madhavareddybalajiviswanadh.com",
     },
     {
-      icon: <FaLinkedinIn size={40} />,
+      icon: linkedin,
+      bio: "LinkedIn",
       link: "https://www.linkedin.com/in/balaji-viswanadh-875473220/",
     },
     {
-      icon: <FiGithub size={40} />,
+      icon: github,
+      bio: "Github",
       link: "https://github.com/Mbalajiviswanadh",
     },
     {
-      icon: <FaInstagram size={40} />,
+      icon: insta,
+      bio: "Instagram",
       link: "https://www.instagram.com/mb_viswanadh/",
     },
     {
-      icon: <FaSpotify size={40} />,
+      icon: spotify,
+      bio: "Spotify",
       link: "https://open.spotify.com/user/31lqbzd5suqjdekitvo4l53pqomu?si=6b04d10c0c174591",
     },
     {
-      icon: <FaPinterest size={40} />,
+      icon: pin,
+      bio: "Pinterest",
       link: "https://pin.it/3C4deNP",
     },
     {
-      icon: <SiBento size={40} />,
+      icon: bento,
+      bio: "Bento",
       link: "https://bento.me/mbviswanadh",
     },
   ];
@@ -46,20 +53,35 @@ const AllLinks = () => {
         <h1 className="text-orange-300 font-semibold">All my links🌐</h1>
       </div>
       <div className="flex lg:text-[18px] text-[12px] flex-row gap-2">
-        <h2>Connet and Follow me through⤵️:</h2>
-        {/* <FaChevronCircleDown className="pt-1" id={"scrolldown"} size={25} /> */}
+        <h2>Connet and Follow me through ⤵️:</h2>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-10">
+      {/* link card */}
+
+      <div className="mt-10 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-10">
         {links.map((data, i) => (
-          <div className="flex items-center" key={i}>
-            <div className="mr-2">{data.icon}</div>
-            <div className="">
-              <Link href={data.link} target="_blank">
-                Links
-              </Link>
+          <Link
+            href={data.link}
+            target="_blank"
+            className="bg-base-200 p-4 rounded-2xl hover:-translate-y-1  transition-transform cursor-pointer  duration-300 shadow-md hover:shadow-green-200 hover:shadow-md"
+            key={i}>
+            <div className="flex items-center">
+              <Image
+                src={data.icon}
+                className="mr-4 lg:w-16 lg:h-16 w-10 h-10"
+                alt={"image"}
+              />
+              <div>
+                <p className="lg:text-[15px] text-[14px]">{data.bio}</p>
+                <Link
+                  href={data.link}
+                  target="_blank"
+                  className="text-green-400 font-medium text-[13px] hover:underline">
+                  <span className="">Connect & Follow Me.</span>
+                </Link>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

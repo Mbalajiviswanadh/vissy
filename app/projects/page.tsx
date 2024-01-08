@@ -134,6 +134,9 @@ const ProjectsPage = () => {
         {
           skills: "Flutter",
         },
+        {
+          skills: "Dart",
+        },
       ],
       github: "https://github.com/Mbalajiviswanadh/Flutter-App-UI",
       live: "https://github.com/Mbalajiviswanadh/Flutter-App-UI",
