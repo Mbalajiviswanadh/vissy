@@ -68,7 +68,7 @@ const AllLinks = () => {
             <div className="flex items-center">
               <Image
                 src={data.icon}
-                className="mr-4 lg:w-16 lg:h-16 w-10 h-10"
+                className="mr-4 lg:w-12 lg:h-12 w-10 h-10"
                 alt={"image"}
               />
               <div>
@@ -77,7 +77,7 @@ const AllLinks = () => {
                   href={data.link}
                   target="_blank"
                   className="text-green-400 font-medium text-[13px] hover:underline">
-                  <span className="">Connect & Follow Me.</span>
+                  <span className="">Connect & Follow</span>
                 </Link>
               </div>
             </div>

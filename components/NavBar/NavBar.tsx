@@ -16,7 +16,7 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="flex-none hidden lg:block">
-            <ul className="menu font-semibold menu-horizontal">
+            <ul className="menu  menu-horizontal">
               {/* Navbar menu content here */}
               <li>
                 <Link href={"/about"}>About👨‍💻</Link>
@@ -84,7 +84,7 @@ const NavBar = () => {
           aria-label="close sidebar"
           className="drawer-overlay"></label>
 
-        <ul className="menu p-4 gap-5 font-semibold w-64 min-h-full md:min-h-full bg-base-200">
+        <ul className="menu p-4 gap-5  w-64 min-h-full md:min-h-full bg-base-200">
           {/* Sidebar content here */}
           <li>
             <Link href={"/about"}>About👨‍💻</Link>
