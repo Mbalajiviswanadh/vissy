@@ -148,7 +148,7 @@ const ProjectsPage = () => {
       <div>
         <h1 className="text-orange-300 font-semibold">Prjects📈</h1>
       </div>
-      <div className="lg:text-[18px] text-[12px]">
+      <div className="lg:text-[14px] text-[12px]">
         <h2 className="my-4">
           I am currently in the learning phase🔎, having practiced several
           projects and continuing to do so to enhance my skills🚀. I want to get
@@ -185,7 +185,7 @@ const ProjectsPage = () => {
                   {project.skill?.map((item, index) => (
                     <span
                       key={index}
-                      className="bg-green-300 px-2 py-1 lg:text-[13px] text-[10px] mr-2 mt-2 text-zinc-800 font-medium rounded">
+                      className="bg-green-300 px-2 py-1 lg:text-[12px] text-[10px] mr-2 mt-2 text-zinc-800 font-medium rounded">
                       {item.skills}
                     </span>
                   ))}

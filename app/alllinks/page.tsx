@@ -52,7 +52,7 @@ const AllLinks = () => {
       <div>
         <h1 className="text-orange-300 font-semibold">All my links🌐</h1>
       </div>
-      <div className="flex lg:text-[18px] text-[12px] flex-row gap-2">
+      <div className="flex lg:text-[14px] text-[12px] flex-row gap-2">
         <h2>Connet and Follow me through ⤵️:</h2>
       </div>
 
@@ -72,7 +72,7 @@ const AllLinks = () => {
                 alt={"image"}
               />
               <div>
-                <p className="lg:text-[15px] text-[14px]">{data.bio}</p>
+                <p className="lg:text-[14px] text-[14px]">{data.bio}</p>
                 <Link
                   href={data.link}
                   target="_blank"

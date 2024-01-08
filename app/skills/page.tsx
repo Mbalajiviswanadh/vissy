@@ -50,7 +50,7 @@ const SkillsPage = () => {
       <div className="text-orange-300 font-semibold">
         <h1>My Skills🤸‍♀️</h1>
       </div>
-      <div className=" lg:text-[18px] text-[12px]">
+      <div className=" lg:text-[14px] text-[12px]">
         <h2 className="my-4">
           I am a dedicated Developer and Designer with a strong passion for
           creating full-stack websites and designing UI{" "}
@@ -92,11 +92,11 @@ const SkillsPage = () => {
       {/* Skils here */}
       <div className="flex flex-col lg:flex-row  ">
         <div>
-          <h1 className="mt-10 mb-3 lg:text-[18px] text-[12px] font-medium  text-amber-500">
+          <h1 className="mt-10 mb-3 lg:text-[14px] text-[12px] font-medium  text-amber-500">
             <span className="border-b-2 border-green-300">Languages</span>
           </h1>
 
-          <div className="flex mb-5 lg:text-[18px] text-[10px] flex-wrap flex-row lg:justify-start justify-center">
+          <div className="flex mb-5 lg:text-[14px] text-[10px] flex-wrap flex-row lg:justify-start justify-center">
             {myskills.map((d, idx) => (
               <h2
                 key={idx}
@@ -105,12 +105,12 @@ const SkillsPage = () => {
               </h2>
             ))}
           </div>
-          <h1 className="mt-10 mb-3 lg:text-[18px] text-[12px] font-medium  text-amber-500">
+          <h1 className="mt-10 mb-3 lg:text-[14px] text-[12px] font-medium  text-amber-500">
             <span className="border-b-2 border-green-300">
               Libraries & Frameworks
             </span>
           </h1>
-          <div className="flex lg:text-[18px] lg:w-[50%] text-[10px] lg:justify-start justify-center flex-wrap flex-row">
+          <div className="flex lg:text-[14px] lg:w-[50%] text-[10px] lg:justify-start justify-center flex-wrap flex-row">
             {advskills.map((d, i) => (
               <h2
                 key={i}
