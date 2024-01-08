@@ -35,7 +35,7 @@ export default function Home() {
         </div>
 
         <div className="lg:ml-8 mt-6 lg:mt-0">
-          <Image src={hicat} alt="hellopeople" className="lg:max-w-md" />
+          <Image src={hicat} alt="hellopeople" className="lg:w-40" />
         </div>
       </div>
     </>
