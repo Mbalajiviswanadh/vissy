@@ -6,7 +6,7 @@ const AboutPage = () => {
       <div>
         <h1 className="text-orange-300 font-semibold">About Me 🧑🏻‍🏫</h1>
       </div>
-      <div className="lg:text-[18px] text-[12px]">
+      <div className="lg:text-[14px] text-[12px]">
         <h2 className="my-4">
           Greetings!🍀 Im{" "}
           <span className="border-b-2 border-orange-300">Balaji Viswanadh</span>{" "}
