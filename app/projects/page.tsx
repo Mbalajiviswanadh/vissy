@@ -161,14 +161,14 @@ const ProjectsPage = () => {
         {projects.map((project, y) => (
           <div key={y}>
             <div className="flex flex-col   md:flex-row  mt-8">
-              <div className="md:w-1/2   my-10">
+              <div className="md:w-1/2 mr-20   my-10">
                 <Link href={project.live} target="_blank">
                   <Image
                     src={project.image}
                     alt="image"
                     width={400}
                     height={1000}
-                    className="rounded-xl mt-4 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-600 transition-transform border-b-2 hover:opacity-75"
+                    className="rounded-xl mt-4 hover:-translate-y-1 hover:shadow-md hover:shadow-amber-600 transition-transform border-b-2 hover:opacity-75"
                   />
                 </Link>
               </div>
@@ -179,8 +179,12 @@ const ProjectsPage = () => {
                     {project.name}.
                   </span>
                 </h1>
-                <h3 className=" lg:text-wrap  my-2">{project.description}</h3>
-                <p className="lg:text-wrap  mb-4">{project.learn}</p>
+                <h3 className=" lg:text-wrap lg:text-[14px] text-[12px] my-2">
+                  {project.description}
+                </h3>
+                <p className="lg:text-wrap lg:text-[14px] text-[12px] mb-4">
+                  {project.learn}
+                </p>
                 <div className="flex flex-wrap  space-x-2">
                   {project.skill?.map((item, index) => (
                     <span
@@ -190,7 +194,7 @@ const ProjectsPage = () => {
                     </span>
                   ))}
                 </div>{" "}
-                <div className="flex flex-row  align-bottom space-x-4 my-10">
+                <div className="flex flex-row  align-bottom space-x-4 my-5">
                   <Link href={project.github} target="_blank">
                     <IoLogoGithub
                       size={25}
