@@ -7,8 +7,7 @@ import insta from "./insta.png";
 import pin from "./pin.png";
 import spotify from "./spotify.png";
 import Link from "next/link";
-import mewo from "./mewo.gif";
-
+import discord from "./discord.png";
 const AllLinks = () => {
   const links = [
     {
@@ -40,6 +39,11 @@ const AllLinks = () => {
       icon: pin,
       bio: "Pinterest",
       link: "https://pin.it/3C4deNP",
+    },
+    {
+      icon: discord,
+      bio: "Discord",
+      link: "https://discordapp.com/users/857654631916240937",
     },
     {
       icon: bento,
