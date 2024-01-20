@@ -55,7 +55,7 @@ const ProjectsPage = () => {
         },
       ],
       github: "https://github.com/Mbalajiviswanadh/TodoList-app",
-      live: "https://memory-card-game-roan.vercel.app/",
+      live: "https://todolist-coral-five.vercel.app/",
     },
     {
       name: "Basic Portfolio",
