@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 const AboutPage = () => {
   return (
@@ -43,6 +44,15 @@ const AboutPage = () => {
           </Link>
           , look forward to connecting with you!☮️
         </h2>
+
+        <a
+          data-theme=""
+          className="m-10"
+          href="https://docs.google.com/document/d/1NvFQWKfVNRbIQORfXyTWwtKqX8qS-Xmoc-PnzMUXndo/edit?usp=sharing">
+          <button className="btn flex flex-row bg-orange-300 text-white  hover:bg-green-400 hover:text-white">
+            Resume <FaArrowRight />
+          </button>
+        </a>
       </div>
     </div>
   );
