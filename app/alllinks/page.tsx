@@ -18,7 +18,7 @@ const AllLinks = () => {
     {
       icon: linkedin,
       bio: "LinkedIn",
-      link: "https://www.linkedin.com/in/balaji-viswanadh-875473220/",
+      link: "https://www.linkedin.com/in/balaji-viswanadh-madhavareddy-875473220/",
     },
     {
       icon: github,
