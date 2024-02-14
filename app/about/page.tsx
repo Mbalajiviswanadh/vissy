@@ -47,7 +47,7 @@ const AboutPage = () => {
 
         <a
           className="m-10"
-          href="https://drive.google.com/file/d/1BPJYVOM8FodRtbI4-3c8WVHZgh4fCTMt/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1ULZyhC09L-FkYXYwGf7YgUSkdguygfWL/view?usp=sharing"
           target="_blank">
           <button className="btn flex flex-row bg-orange-300 text-white  hover:bg-green-400 hover:text-white">
             Resume <FaArrowRight />
