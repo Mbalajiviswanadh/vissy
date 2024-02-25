@@ -7,6 +7,7 @@ import portfolio from "./portfolio.png";
 import todo from "./todo.png";
 import tasks from "./tasks.png";
 import sidenav from "./Twitter.png";
+import algoVisualizer from "./algoVisualizer.png";
 import Link from "next/link";
 
 import { IoLogoGithub } from "react-icons/io";
@@ -15,6 +16,30 @@ import { PiArrowSquareUpRightFill } from "react-icons/pi";
 const ProjectsPage = () => {
   // list of projects
   const projects = [
+    {
+      name: "Algorith Visualizer  ",
+      image: algoVisualizer,
+      description:
+        "This is a small project wich shows the visualization of the different sorting algorithms",
+      learn: "Different Sorting Algos, Dark and Light Themes, Animations",
+      skill: [
+        {
+          skills: "Next Js",
+        },
+        {
+          skills: "Sorting Algos",
+        },
+        {
+          skills: "Hooks",
+        },
+        {
+          skills: "Animations",
+        },
+      ],
+
+      github: "https://github.com/Mbalajiviswanadh/Algorithm-Visualizer",
+      live: "https://algorithm-visualizer-psi-two.vercel.app/",
+    },
     {
       name: "Match the Cards",
       image: game,
