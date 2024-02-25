@@ -17,7 +17,7 @@ const ProjectsPage = () => {
   // list of projects
   const projects = [
     {
-      name: "Algorith Visualizer  ",
+      name: "Sorting Algo Visulizer",
       image: algoVisualizer,
       description:
         "This is a small project wich shows the visualization of the different sorting algorithms",
