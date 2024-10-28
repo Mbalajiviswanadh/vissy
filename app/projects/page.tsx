@@ -182,57 +182,62 @@ const ProjectsPage = () => {
       </div>
       {/* cards */}
 
-      <div className="flex flex-col  space-y-30">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-4">
         {projects.map((project, y) => (
-          <div key={y}>
-            <div className="flex flex-col   md:flex-row  mt-8">
-              <div className="md:w-1/2 mr-20   my-10">
-                <Link href={project.live} target="_blank">
-                  <Image
-                    src={project.image}
-                    alt="image"
-                    width={400}
-                    height={1000}
-                    className="rounded-xl mt-4 hover:-translate-y-1 hover:shadow-md hover:shadow-amber-600 transition-transform border-b-2 hover:opacity-75"
+          <div
+            key={y}
+            className="rounded-lg shadow-sm dark:shadow-gray-300  hover:shadow-lg hover:shadow-amber-600 transition-shadow duration-300 ease-in-out overflow-hidden">
+            {/* Image Section */}
+            <div className="w-full h-auto">
+              <Link href={project.live} target="_blank">
+                <Image
+                  src={project.image}
+                  alt="Project Image"
+                  width={400}
+                  height={300}
+                  className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-cover rounded-t-lg hover:-translate-y-1 transition-transform hover:opacity-75"
+                />
+              </Link>
+            </div>
+
+            {/* Text Section */}
+            <div className="p-3 sm:p-4">
+              <h1 className="text-lg sm:text-xl my-2 text-amber-400 font-bold">
+                <span className="text-orange-500">{project.name}</span>
+                <span className="text-green-700">.</span>
+              </h1>
+              <h3 className="text-xs sm:text-sm my-1 sm:my-2">
+                {project.description}
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-500 dark:text-zinc-400 mb-3">
+                {project.learn}
+              </p>
+
+              {/* Skills */}
+              <div className="flex flex-wrap gap-1 my-2">
+                {project.skill?.map((item, skillIndex) => (
+                  <span
+                    key={skillIndex}
+                    className="border border-gray-700 rounded-full px-1.5 py-0.5 text-[8px] sm:text-[10px]">
+                    {item.skills}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className="flex space-x-3 sm:space-x-4 mt-4 sm:mt-5">
+                <Link href={project.github} target="_blank">
+                  <IoLogoGithub
+                    size={20}
+                    className="hover:-translate-y-1 transition-transform cursor-pointer"
                   />
                 </Link>
-              </div>
-              <div className=" lg:w-[30%] lg:h- lg:text-[15px] text-[12px] lg:mt-14 mt-2">
-                <h1 className="text-xl my-3 text-amber-400  font-bold">
-                  <span className="border-b-2  lg:text-2xl text-[15px] border-green-400">
-                    {" "}
-                    {project.name}.
-                  </span>
-                </h1>
-                <h3 className=" lg:text-wrap lg:text-[14px] text-[12px] my-2">
-                  {project.description}
-                </h3>
-                <p className="lg:text-wrap lg:text-[14px] text-[12px] mb-4">
-                  {project.learn}
-                </p>
-                <div className="flex flex-wrap  space-x-2">
-                  {project.skill?.map((item, index) => (
-                    <span
-                      key={index}
-                      className="bg-green-300 px-2 py-1 lg:text-[12px] text-[10px] mr-2 mt-2 text-zinc-800 font-medium rounded">
-                      {item.skills}
-                    </span>
-                  ))}
-                </div>{" "}
-                <div className="flex flex-row  align-bottom space-x-4 my-5">
-                  <Link href={project.github} target="_blank">
-                    <IoLogoGithub
-                      size={25}
-                      className="hover:-translate-y-1 transition-transform cursor-pointer"
-                    />
-                  </Link>
-                  <Link href={project.live} target="_blank">
-                    <PiArrowSquareUpRightFill
-                      size={25}
-                      className="hover:-translate-y-1  transition-transform cursor-pointer"
-                    />
-                  </Link>
-                </div>
+                <Link href={project.live} target="_blank">
+                  <PiArrowSquareUpRightFill
+                    size={20}
+                    className="hover:-translate-y-1 transition-transform cursor-pointer"
+                  />
+                </Link>
               </div>
             </div>
           </div>
