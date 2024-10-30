@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 
 import carrental from "./car.png";
 import flutterapp from "./flutter.png";
@@ -8,6 +10,12 @@ import todo from "./todo.png";
 import tasks from "./tasks.png";
 import sidenav from "./Twitter.png";
 import algoVisualizer from "./algoVisualizer.png";
+import SentimentAnalysis from "./sentiment.png";
+import StockImg from "./stock.png";
+import Medical from "./medical.png";
+import Bajaj from "./bajaj.png";
+import Quicksell from "./quickshell.png";
+
 import Link from "next/link";
 
 import { IoLogoGithub } from "react-icons/io";
@@ -16,6 +24,107 @@ import { PiArrowSquareUpRightFill } from "react-icons/pi";
 const ProjectsPage = () => {
   // list of projects
   const projects = [
+    {
+      name: "Quicksell-Intern FrontEnd task",
+      image: Quicksell,
+      description: "This is a FrontEnd task by Quicksell",
+      learn: "Challenge Logic, User Interface",
+      skill: [
+        {
+          skills: "React.Js",
+        },
+        {
+          skills: "UI",
+        },
+      ],
+
+      github: "https://github.com/Mbalajiviswanadh/Quicksell-task",
+      live: "https://quicksell-task-alpha.vercel.app/",
+    },
+    {
+      name: "Bajaj-Finserv-Challenge",
+      image: Bajaj,
+      description:
+        "This is a Full Stack Challenge by Bajaj Finserv Health Challenge, Which Involes Both FrontEnd and BackEnd",
+      learn: "Working with API triggers, Challege Logics",
+      skill: [
+        {
+          skills: "Node.Js",
+        },
+        {
+          skills: "React.Js",
+        },
+        {
+          skills: "API",
+        },
+      ],
+
+      github: "https://github.com/Mbalajiviswanadh/Bajaj-finserv-challange",
+      live: "https://bajaj-finserv-challange-frontend.vercel.app/",
+    },
+    {
+      name: "Medical Recommendation",
+      image: Medical,
+      description:
+        "A Medical Recommendation app where user can get medical information such as: Medication, Precautions, Diets, etc.. which depends on the Symptoms.",
+      learn:
+        "SVC, Preprocessing the Data, Developing Recommendation System Logic",
+      skill: [
+        {
+          skills: "StreamLit",
+        },
+        {
+          skills: "Machine learning",
+        },
+        {
+          skills: "scikit learn",
+        },
+      ],
+
+      github: "https://github.com/Mbalajiviswanadh/Medical-Recommendation",
+      live: "https://mbalajiviswanadh-medical-recommendation-app-y6bsng.streamlit.app/",
+    },
+    {
+      name: "Stock Price Prediction",
+      image: StockImg,
+      description:
+        "This project is a comprehensive tool for predicting the stock prices of Tata Consultancy Services (TCS) using various machine learning models.",
+      learn:
+        "Stock Data Retrieval, Visualization, Model Training & Prediction, useage of Multiple Models",
+      skill: [
+        {
+          skills: "StreamLit",
+        },
+        {
+          skills: "Data Visualization",
+        },
+      ],
+
+      github: "https://github.com/Mbalajiviswanadh/Stock-Price-Prediction",
+      live: "https://github.com/Mbalajiviswanadh/Stock-Price-Prediction",
+    },
+    {
+      name: "Sentiment Analysis",
+      image: SentimentAnalysis,
+      description:
+        "This project is a Sentiment Analysis App built using Streamlit and the transformers library from Hugging Face. The app allows users to input text and analyze its sentiment using a pre-trained BERT model.",
+      learn: "Using BERT model, Develope UI using Stream Lit",
+      skill: [
+        {
+          skills: "StreamLit",
+        },
+        {
+          skills: "NLP",
+        },
+        {
+          skills: "Python",
+        },
+      ],
+
+      github:
+        "https://github.com/Mbalajiviswanadh/Sentiment-Analysis/tree/master",
+      live: "https://github.com/Mbalajiviswanadh/Sentiment-Analysis/tree/master",
+    },
     {
       name: "Sorting Algo Visulizer",
       image: algoVisualizer,
@@ -168,10 +277,18 @@ const ProjectsPage = () => {
     },
   ];
 
+  // State to control the number of projects displayed
+  const [visibleProjects, setVisibleProjects] = useState(4);
+
+  // Handler to load more projects
+  const handleLoadMore = () => {
+    setVisibleProjects((prevCount) => prevCount + 4);
+  };
+
   return (
     <div className="text-justify">
       <div>
-        <h1 className="text-orange-300 font-semibold">Prjects📈</h1>
+        <h1 className="text-orange-300 font-semibold">Projects📈</h1>
       </div>
       <div className="lg:text-[14px] text-[12px]">
         <h2 className="my-4">
@@ -180,13 +297,12 @@ const ProjectsPage = () => {
           really good at what Im learning and do more projects in the future💘.
         </h2>
       </div>
-      {/* cards */}
-
+      {/* Project Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-4">
-        {projects.map((project, y) => (
+        {projects.slice(0, visibleProjects).map((project, index) => (
           <div
-            key={y}
-            className="rounded-lg shadow-sm dark:shadow-gray-300  hover:shadow-lg hover:shadow-amber-600 transition-shadow duration-300 ease-in-out overflow-hidden">
+            key={index}
+            className="rounded-lg shadow-sm dark:shadow-gray-300 hover:shadow-lg hover:shadow-amber-600 transition-shadow duration-300 ease-in-out overflow-hidden">
             {/* Image Section */}
             <div className="w-full h-auto">
               <Link href={project.live} target="_blank">
@@ -243,6 +359,17 @@ const ProjectsPage = () => {
           </div>
         ))}
       </div>
+
+      {/* "See More Projects" Button */}
+      {visibleProjects < projects.length && (
+        <div className="text-center mt-6">
+          <button
+            onClick={handleLoadMore}
+            className="bg-orange-400 text-white py-2 px-4 rounded-lg hover:bg-orange-300 transition-colors">
+            See More Projects
+          </button>
+        </div>
+      )}
     </div>
   );
 };
