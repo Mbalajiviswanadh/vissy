@@ -15,6 +15,9 @@ import StockImg from "./stock.png";
 import Medical from "./medical.png";
 import Bajaj from "./bajaj.png";
 import Quicksell from "./quickshell.png";
+import Merkle from "./Merkle.png";
+import HrData from "./hrdatabases.png";
+import Music from "./music.png";
 
 import Link from "next/link";
 
@@ -24,6 +27,69 @@ import { PiArrowSquareUpRightFill } from "react-icons/pi";
 const ProjectsPage = () => {
   // list of projects
   const projects = [
+    {
+      name: "Music Recommendation Based on Music Features.",
+      image: Music,
+      description:
+        "A music recommendation system built with Streamlit and the Spotify API that retrieves users' playlists and tracks.",
+      learn: " Working with Spotify Users Playlist APIs, StreamLit",
+      skill: [
+        {
+          skills: "StreamLit",
+        },
+        {
+          skills: "Spotify API",
+        },
+      ],
+
+      github:
+        "https://github.com/Mbalajiviswanadh/Music-reco-Based-on-Tunning-Features-",
+      live: "https://p-music-recommendation.streamlit.app/",
+    },
+    {
+      name: "HR-and-JobDetailsPortal",
+      image: HrData,
+      description:
+        "This is a web application designed to help users discover and explore job opportunities and HR details",
+      learn: "FrontEnd, DataSet extraction",
+      skill: [
+        {
+          skills: "React.Js",
+        },
+        {
+          skills: "Company DataSet",
+        },
+      ],
+
+      github: "https://github.com/Mbalajiviswanadh/HR-and-JobDetailsPortal",
+      live: "https://hr-and-job-details-portal.vercel.app/",
+    },
+    {
+      name: "Merkle Proof Verification of Blockchain Transactions",
+      image: Merkle,
+      description:
+        "This application designed to interact with and verify Bitcoin blockchain Transaction data in real-time.",
+      learn:
+        "BlockChain, Transactions Verification, Merkle Tree Data Structure",
+      skill: [
+        {
+          skills: "React.Js",
+        },
+        {
+          skills: "Node Js",
+        },
+        {
+          skills: "Express Js",
+        },
+        {
+          skills: "BitCoin API",
+        },
+      ],
+
+      github:
+        "https://github.com/Mbalajiviswanadh/Merkle-Proof-Verification-of-Blockchain-Transactions",
+      live: "https://charter-21-bce-8520-frontend.vercel.app/",
+    },
     {
       name: "Quicksell-Intern FrontEnd task",
       image: Quicksell,
