@@ -13,7 +13,6 @@ import algoVisualizer from "./algoVisualizer.png";
 import SentimentAnalysis from "./sentiment.png";
 import StockImg from "./stock.png";
 import Medical from "./medical.png";
-import Bajaj from "./bajaj.png";
 import Quicksell from "./quickshell.png";
 import Merkle from "./Merkle.png";
 import HrData from "./hrdatabases.png";
