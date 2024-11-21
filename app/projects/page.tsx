@@ -107,27 +107,7 @@ const ProjectsPage = () => {
       github: "https://github.com/Mbalajiviswanadh/Quicksell-task",
       live: "https://quicksell-task-alpha.vercel.app/",
     },
-    {
-      name: "Bajaj-Finserv-Challenge",
-      image: Bajaj,
-      description:
-        "This is a Full Stack Challenge by Bajaj Finserv Health Challenge, Which Involes Both FrontEnd and BackEnd",
-      learn: "Working with API triggers, Challege Logics",
-      skill: [
-        {
-          skills: "Node.Js",
-        },
-        {
-          skills: "React.Js",
-        },
-        {
-          skills: "API",
-        },
-      ],
 
-      github: "https://github.com/Mbalajiviswanadh/Bajaj-finserv-challange",
-      live: "https://bajaj-finserv-challange-frontend.vercel.app/",
-    },
     {
       name: "Medical Recommendation",
       image: Medical,
