@@ -64,7 +64,7 @@ const ProjectsPage = () => {
           <span className="ml-1 inline-block">🔎</span>, having practiced
           several projects and continuing to do so to enhance my skills
           <span className="ml-1 inline-block">🚀</span>. I want to get really
-          good at what I'm learning and do more projects in the future
+          good at what Im learning and do more projects in the future
           <span className="ml-1 inline-block">💘</span>.
         </h2>
       </div>
