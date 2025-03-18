@@ -1,329 +1,45 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-
-import carrental from "./car.png";
-import flutterapp from "./flutter.png";
-import game from "./game.png";
-import portfolio from "./portfolio.png";
-import todo from "./todo.png";
-import tasks from "./tasks.png";
-import sidenav from "./Twitter.png";
-import algoVisualizer from "./algoVisualizer.png";
-import SentimentAnalysis from "./sentiment.png";
-import StockImg from "./stock.png";
-import Medical from "./medical.png";
-import Quicksell from "./quickshell.png";
-import Merkle from "./Merkle.png";
-import HrData from "./hrdatabases.png";
-import Music from "./music.png";
-
+import { useState, useEffect } from "react";
 import Link from "next/link";
-
 import { IoLogoGithub } from "react-icons/io";
 import { PiArrowSquareUpRightFill } from "react-icons/pi";
+import { motion } from "framer-motion";
+
+// Import the projects array from the separate file
+import { projects } from "../data/projectsData"; // Adjust the path as needed
 
 const ProjectsPage = () => {
-  // list of projects
-  const projects = [
-    {
-      name: "Music Recommendation Based on Music Features.",
-      image: Music,
-      description:
-        "A music recommendation system built with Streamlit and the Spotify API that retrieves users' playlists and tracks.",
-      learn: " Working with Spotify Users Playlist APIs, StreamLit",
-      skill: [
-        {
-          skills: "StreamLit",
-        },
-        {
-          skills: "Spotify API",
-        },
-      ],
-
-      github:
-        "https://github.com/Mbalajiviswanadh/Music-reco-Based-on-Tunning-Features-",
-      live: "https://p-music-recommendation.streamlit.app/",
-    },
-    {
-      name: "HR-and-JobDetailsPortal",
-      image: HrData,
-      description:
-        "This is a web application designed to help users discover and explore job opportunities and HR details",
-      learn: "FrontEnd, DataSet extraction",
-      skill: [
-        {
-          skills: "React.Js",
-        },
-        {
-          skills: "Company DataSet",
-        },
-      ],
-
-      github: "https://github.com/Mbalajiviswanadh/HR-and-JobDetailsPortal",
-      live: "https://hr-and-job-details-portal.vercel.app/",
-    },
-    {
-      name: "Merkle Proof Verification of Blockchain Transactions",
-      image: Merkle,
-      description:
-        "This application designed to interact with and verify Bitcoin blockchain Transaction data in real-time.",
-      learn:
-        "BlockChain, Transactions Verification, Merkle Tree Data Structure",
-      skill: [
-        {
-          skills: "React.Js",
-        },
-        {
-          skills: "Node Js",
-        },
-        {
-          skills: "Express Js",
-        },
-        {
-          skills: "BitCoin API",
-        },
-      ],
-
-      github:
-        "https://github.com/Mbalajiviswanadh/Merkle-Proof-Verification-of-Blockchain-Transactions",
-      live: "https://charter-21-bce-8520-frontend.vercel.app/",
-    },
-    {
-      name: "Quicksell-Intern FrontEnd task",
-      image: Quicksell,
-      description: "This is a FrontEnd task by Quicksell",
-      learn: "Challenge Logic, User Interface",
-      skill: [
-        {
-          skills: "React.Js",
-        },
-        {
-          skills: "UI",
-        },
-      ],
-
-      github: "https://github.com/Mbalajiviswanadh/Quicksell-task",
-      live: "https://quicksell-task-alpha.vercel.app/",
-    },
-
-    {
-      name: "Medical Recommendation",
-      image: Medical,
-      description:
-        "A Medical Recommendation app where user can get medical information such as: Medication, Precautions, Diets, etc.. which depends on the Symptoms.",
-      learn:
-        "SVC, Preprocessing the Data, Developing Recommendation System Logic",
-      skill: [
-        {
-          skills: "StreamLit",
-        },
-        {
-          skills: "Machine learning",
-        },
-        {
-          skills: "scikit learn",
-        },
-      ],
-
-      github: "https://github.com/Mbalajiviswanadh/Medical-Recommendation",
-      live: "https://mbalajiviswanadh-medical-recommendation-app-y6bsng.streamlit.app/",
-    },
-    {
-      name: "Stock Price Prediction",
-      image: StockImg,
-      description:
-        "This project is a comprehensive tool for predicting the stock prices of Tata Consultancy Services (TCS) using various machine learning models.",
-      learn:
-        "Stock Data Retrieval, Visualization, Model Training & Prediction, useage of Multiple Models",
-      skill: [
-        {
-          skills: "StreamLit",
-        },
-        {
-          skills: "Data Visualization",
-        },
-      ],
-
-      github: "https://github.com/Mbalajiviswanadh/Stock-Price-Prediction",
-      live: "https://github.com/Mbalajiviswanadh/Stock-Price-Prediction",
-    },
-    {
-      name: "Sentiment Analysis",
-      image: SentimentAnalysis,
-      description:
-        "This project is a Sentiment Analysis App built using Streamlit and the transformers library from Hugging Face. The app allows users to input text and analyze its sentiment using a pre-trained BERT model.",
-      learn: "Using BERT model, Develope UI using Stream Lit",
-      skill: [
-        {
-          skills: "StreamLit",
-        },
-        {
-          skills: "NLP",
-        },
-        {
-          skills: "Python",
-        },
-      ],
-
-      github:
-        "https://github.com/Mbalajiviswanadh/Sentiment-Analysis/tree/master",
-      live: "https://github.com/Mbalajiviswanadh/Sentiment-Analysis/tree/master",
-    },
-    {
-      name: "Sorting Algo Visulizer",
-      image: algoVisualizer,
-      description:
-        "This is a small project wich shows the visualization of the different sorting algorithms",
-      learn: "Different Sorting Algos, Dark and Light Themes, Animations",
-      skill: [
-        {
-          skills: "Next Js",
-        },
-        {
-          skills: "Sorting Algos",
-        },
-        {
-          skills: "Hooks",
-        },
-        {
-          skills: "Animations",
-        },
-      ],
-
-      github: "https://github.com/Mbalajiviswanadh/Algorithm-Visualizer",
-      live: "https://algorithm-visualizer-psi-two.vercel.app/",
-    },
-    {
-      name: "Match the Cards",
-      image: game,
-      description:
-        "Match the Cards is a small game application where the user needs to match similar cards.",
-      learn:
-        "For the API i used CATs images and also used few Hooks for the logics",
-      skill: [
-        {
-          skills: "React Js",
-        },
-      ],
-
-      github: "https://github.com/Mbalajiviswanadh/memory-card-game",
-      live: "https://memory-card-game-roan.vercel.app/",
-    },
-    {
-      name: "TO-DO App",
-      image: todo,
-      description:
-        "In this Todo Application user can 'add,delete and edit' their tasks i also used MongoDB so the tasks for every user will be same",
-      learn: "I include CRUD operations",
-      skill: [
-        {
-          skills: "Next Js",
-        },
-        {
-          skills: "Typing Script",
-        },
-        {
-          skills: "MongoDB",
-        },
-        {
-          skills: "Tailwind CSS",
-        },
-        {
-          skills: "Prisma",
-        },
-      ],
-      github: "https://github.com/Mbalajiviswanadh/TodoList-app",
-      live: "https://todolist-coral-five.vercel.app/",
-    },
-    {
-      name: "Basic Portfolio",
-      image: portfolio,
-      description: "This is a Practice Portfolio ",
-
-      learn: "I made this using React Js",
-      skill: [
-        {
-          skills: "React Js",
-        },
-        {
-          skills: "BootStrap",
-        },
-      ],
-      github: "https://github.com/Mbalajiviswanadh/Rjs-Task6",
-      live: "https://rjs-task6.vercel.app/",
-    },
-
-    {
-      name: "Twitter Side Nav",
-      image: sidenav,
-      description:
-        "I made a basic Twitter Side nav bar with default desktop theme(dark | light)",
-      learn: "I made this using Next Js",
-      skill: [
-        {
-          skills: "Next Js",
-        },
-        {
-          skills: "Tailwind CSS",
-        },
-        {
-          skills: "Typing Script",
-        },
-      ],
-      github: "https://github.com/Mbalajiviswanadh/Twitter-Side-Navbar",
-      live: "https://side-nav-bar-seven.vercel.app/",
-    },
-    {
-      name: "WheelsOnWeb",
-      image: carrental,
-      description:
-        "This is a Basic Car Rental Application, I made this with a Team of 6 people",
-      learn: "I made this Web Site using React Js, MongoDB, CRUD operations",
-      skill: [
-        {
-          skills: "React Js",
-        },
-        {
-          skills: "Strip (for only frontend)",
-        },
-      ],
-      github: "https://github.com/Mbalajiviswanadh/wheelsonweb-frontend",
-      live: "https://wheelsonweb-frontend.vercel.app/",
-    },
-    {
-      name: "BootStrap",
-      image: tasks,
-      description: "This is a Practice tasks BootStrap frame work",
-      learn: "I used BootStrap for css",
-      skill: [
-        {
-          skills: "React Js",
-        },
-      ],
-      github: "https://github.com/Mbalajiviswanadh/Bootstrap-Java-Tasks",
-      live: "https://mbalajiviswanadh.github.io/Bootstrap-Java-Tasks/",
-    },
-    {
-      name: "App UI",
-      image: flutterapp,
-      description: "It is just a UI of an APP",
-      learn: "I made this using Flutter",
-      skill: [
-        {
-          skills: "Flutter",
-        },
-        {
-          skills: "Dart",
-        },
-      ],
-      github: "https://github.com/Mbalajiviswanadh/Flutter-App-UI",
-      live: "https://github.com/Mbalajiviswanadh/Flutter-App-UI",
-    },
+  // Extract unique skill categories
+  const categories: string[] = [
+    "All",
+    ...Array.from(
+      new Set(
+        projects.flatMap((project) => project.skill?.map((s) => s.skills) || [])
+      )
+    ),
   ];
 
-  // State to control the number of projects displayed
+  // State for filtering and pagination
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [filteredProjects, setFilteredProjects] = useState(projects);
   const [visibleProjects, setVisibleProjects] = useState(4);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Filter projects when activeFilter changes
+  useEffect(() => {
+    if (activeFilter === "All") {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(
+        projects.filter((project) =>
+          project.skill?.some((skill) => skill.skills === activeFilter)
+        )
+      );
+    }
+    // Reset visible count when filter changes
+    setVisibleProjects(4);
+  }, [activeFilter]);
 
   // Handler to load more projects
   const handleLoadMore = () => {
@@ -331,88 +47,236 @@ const ProjectsPage = () => {
   };
 
   return (
-    <div className="text-justify">
-      <div>
-        <h1 className="text-orange-300 font-semibold">Projects📈</h1>
-      </div>
-      <div className="lg:text-[14px] text-[12px]">
-        <h2 className="my-4">
-          I am currently in the learning phase🔎, having practiced several
-          projects and continuing to do so to enhance my skills🚀. I want to get
-          really good at what Im learning and do more projects in the future💘.
+    <div className="max-w-6xl mx-auto px-4 py-8 text-justify">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="text-orange-300 font-semibold">
+          <h1>Projects📈</h1>
+        </div>
+      </motion.div>
+
+      <div className="lg:text-[14px] text-[12px] mb-6">
+        <h2 className="my-4 leading-relaxed">
+          I am currently in the learning phase
+          <span className="ml-1 inline-block">🔎</span>, having practiced
+          several projects and continuing to do so to enhance my skills
+          <span className="ml-1 inline-block">🚀</span>. I want to get really
+          good at what I'm learning and do more projects in the future
+          <span className="ml-1 inline-block">💘</span>.
         </h2>
       </div>
-      {/* Project Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-4">
-        {projects.slice(0, visibleProjects).map((project, index) => (
-          <div
-            key={index}
-            className="rounded-lg shadow-sm dark:shadow-gray-300 hover:shadow-lg hover:shadow-amber-600 transition-shadow duration-300 ease-in-out overflow-hidden">
-            {/* Image Section */}
-            <div className="w-full h-auto">
-              <Link href={project.live} target="_blank">
-                <Image
-                  src={project.image}
-                  alt="Project Image"
-                  width={400}
-                  height={300}
-                  className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-cover rounded-t-lg hover:-translate-y-1 transition-transform hover:opacity-75"
-                />
-              </Link>
-            </div>
 
-            {/* Text Section */}
-            <div className="p-3 sm:p-4">
-              <h1 className="text-lg sm:text-xl my-2 text-amber-400 font-bold">
-                <span className="text-orange-500">{project.name}</span>
-                <span className="text-green-700">.</span>
-              </h1>
-              <h3 className="text-xs sm:text-sm my-1 sm:my-2">
-                {project.description}
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-zinc-400 mb-3">
-                {project.learn}
-              </p>
+      {/* Improved Category Filter */}
+      <motion.div
+        className="mb-8 bg-white/5 backdrop-blur-sm rounded-xl p-4 shadow-md dark:shadow-gray-800/30"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-sm font-medium text-orange-300">
+            Filter by skills
+          </h3>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="flex items-center gap-2  bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs md:text-sm transition-all duration-300"
+          >
+            {activeFilter}
+            <svg
+              className={`w-4 h-4 transition-transform duration-300 ${
+                isDropdownOpen ? "rotate-180" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </motion.button>
+        </div>
 
-              {/* Skills */}
-              <div className="flex flex-wrap gap-1 my-2">
-                {project.skill?.map((item, skillIndex) => (
-                  <span
-                    key={skillIndex}
-                    className="border border-gray-700 rounded-full px-1.5 py-0.5 text-[8px] sm:text-[10px]">
-                    {item.skills}
-                  </span>
-                ))}
-              </div>
-
-              {/* Links */}
-              <div className="flex space-x-3 sm:space-x-4 mt-4 sm:mt-5">
-                <Link href={project.github} target="_blank">
-                  <IoLogoGithub
-                    size={20}
-                    className="hover:-translate-y-1 transition-transform cursor-pointer"
-                  />
-                </Link>
-                <Link href={project.live} target="_blank">
-                  <PiArrowSquareUpRightFill
-                    size={20}
-                    className="hover:-translate-y-1 transition-transform cursor-pointer"
-                  />
-                </Link>
-              </div>
-            </div>
+        {/* Dropdown Content */}
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{
+            height: isDropdownOpen ? "auto" : 0,
+            opacity: isDropdownOpen ? 1 : 0,
+          }}
+          transition={{ duration: 0.3 }}
+          className="overflow-hidden"
+        >
+          <div className="flex flex-wrap gap-2 pt-2">
+            {categories.map((category, index) => (
+              <motion.button
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setActiveFilter(category);
+                  setIsDropdownOpen(false);
+                }}
+                className={`px-4 py-2 rounded-full text-xs md:text-sm transition-all duration-300 whitespace-nowrap ${
+                  activeFilter === category
+                    ? "bg-orange-400 text-white shadow-md"
+                    : "bg-white/5 backdrop-blur-sm border border-gray-700 hover:border-orange-400 hover:bg-orange-400/10"
+                }`}
+              >
+                {category}
+              </motion.button>
+            ))}
           </div>
-        ))}
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* "See More Projects" Button */}
-      {visibleProjects < projects.length && (
-        <div className="text-center mt-6">
+      {/* Project Cards Grid */}
+      {filteredProjects.length > 0 ? (
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+          }}
+        >
+          {filteredProjects.slice(0, visibleProjects).map((project, index) => (
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+              className="flex flex-col overflow-hidden rounded-xl shadow-md dark:shadow-gray-800/30 hover:shadow-lg hover:shadow-amber-600/30 transition-all duration-300 ease-in-out bg-white/5 backdrop-blur-sm"
+            >
+              {/* Image Section */}
+              <div className="w-full h-48 relative overflow-hidden">
+                <Link
+                  href={project.live}
+                  target="_blank"
+                  className="block h-full"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover hover:scale-105 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <span className="text-white text-sm p-3 font-medium">
+                      View Project
+                    </span>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Text Section */}
+              <div className="p-5 flex flex-col justify-between flex-grow">
+                <div>
+                  <h1 className="text-lg sm:text-xl text-amber-400 font-bold mb-3">
+                    <span className="text-orange-500">{project.name}</span>
+                    <span className="text-green-700">.</span>
+                  </h1>
+
+                  <h3 className="text-xs sm:text-sm mb-3 line-clamp-2">
+                    {project.description}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-500 dark:text-zinc-400 mb-4 line-clamp-2">
+                    {project.learn}
+                  </p>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.skill?.map((item, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        onClick={() => setActiveFilter(item.skills)}
+                        className={`border border-gray-700 rounded-full px-3 py-1 text-[8px] sm:text-[10px] 
+                          hover:bg-orange-400/10 hover:border-orange-400 transition-colors duration-300 cursor-pointer
+                          ${
+                            activeFilter === item.skills
+                              ? "border-orange-400 bg-orange-400/10"
+                              : ""
+                          }`}
+                      >
+                        {item.skills}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Links Section - Moved to bottom */}
+                <div className="flex justify-between items-center pt-3 border-t border-gray-700/30">
+                  <span className="text-xs text-gray-400">View Project</span>
+                  <div className="flex space-x-3">
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      className="group flex items-center gap-1"
+                    >
+                      <IoLogoGithub
+                        size={18}
+                        className="transition-transform group-hover:text-orange-400"
+                      />
+                      <span className="text-xs group-hover:text-orange-400">
+                        GitHub
+                      </span>
+                    </Link>
+                    <Link
+                      href={project.live}
+                      target="_blank"
+                      className="group flex items-center gap-1"
+                    >
+                      <PiArrowSquareUpRightFill
+                        size={18}
+                        className="transition-transform group-hover:text-orange-400"
+                      />
+                      <span className="text-xs group-hover:text-orange-400">
+                        Live
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      ) : (
+        <div className="flex flex-col items-center justify-center py-16 bg-white/5 backdrop-blur-sm rounded-xl">
+          <p className="text-lg text-gray-500 dark:text-gray-400">
+            No projects found with this filter.
+          </p>
           <button
-            onClick={handleLoadMore}
-            className="bg-orange-400 text-white py-2 px-4 rounded-lg hover:bg-orange-300 transition-colors">
-            See More Projects
+            onClick={() => setActiveFilter("All")}
+            className="mt-4 text-orange-400 hover:underline"
+          >
+            Show all projects
           </button>
+        </div>
+      )}
+
+      {/* "See More Projects" Button - only show if there are more filtered projects to load */}
+      {visibleProjects < filteredProjects.length && (
+        <div className="text-center mt-10">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleLoadMore}
+            className="bg-orange-400 text-white py-2 px-6 rounded-full hover:bg-orange-300 transition-colors duration-300 shadow-md hover:shadow-orange-400/30"
+          >
+            See More Projects
+          </motion.button>
         </div>
       )}
     </div>

@@ -68,7 +68,8 @@ const AllLinks = () => {
             href={data.link}
             target="_blank"
             className="bg-base-200 p-4 rounded-2xl hover:-translate-y-1  transition-transform cursor-pointer  duration-300 shadow-md hover:shadow-green-200 hover:shadow-md"
-            key={i}>
+            key={i}
+          >
             <div className="flex items-center">
               <Image
                 src={data.icon}
@@ -80,7 +81,8 @@ const AllLinks = () => {
                 <Link
                   href={data.link}
                   target="_blank"
-                  className="text-green-400 font-medium text-[13px] hover:underline">
+                  className="text-green-400 font-medium text-[13px] hover:underline"
+                >
                   <span className="">Connect & Follow</span>
                 </Link>
               </div>
